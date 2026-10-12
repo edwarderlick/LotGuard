@@ -1,0 +1,20 @@
+{
+  "name": "lotguard",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "genvm-lint lint contracts/lotguard.py --json",
+    "test:direct": "python -m pytest tests/direct/ -v --tb=short",
+    "deploy": "tsx deploy/deployScript.ts",
+    "verify:onchain": "tsx deploy/verify_onchain.ts",
+    "demo": "tsx deploy/run_live_demo.ts"
+  },
+  "dependencies": {
+    "genlayer-js": "2.0.0-rc.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}

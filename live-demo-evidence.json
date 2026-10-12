@@ -1,0 +1,124 @@
+{
+  "contractAddress": "0xa153CB64dfb448b13306874FcAed385A20ec20C5",
+  "sourceSha256": "66f24b81aca07d32028898931c45b919fe3034129a8aac6bf0467e289dcd6f89",
+  "timestamp": "2026-10-12T06:28:54.158Z",
+  "steps": [
+    {
+      "step": "Register FLOUR-A",
+      "txHash": "0x4383626cd3611fbf456df759b717cdd66f1efa4477ef1eba1f8e192778db741c",
+      "status": "FINALIZED",
+      "execution": "FINISHED_WITH_RETURN",
+      "expectedOutcome": "Batch registered with initial custodian Acc1",
+      "observedOutcome": "FINALIZED, execution=FINISHED_WITH_RETURN",
+      "passed": true
+    },
+    {
+      "step": "Register FLOUR-B",
+      "txHash": "0xcbb4166c2fc57a021202e43f7455023d71b80440320e7a25ee810c8f2bd6f742",
+      "status": "FINALIZED",
+      "execution": "FINISHED_WITH_RETURN",
+      "expectedOutcome": "Batch registered with initial custodian Acc1",
+      "observedOutcome": "FINALIZED, execution=FINISHED_WITH_RETURN",
+      "passed": true
+    },
+    {
+      "step": "Register SNACK-A",
+      "txHash": "0x7e07a1ed0aeee1b68001492fac1e99bebf45c11904097a3c49beb4c9feba272e",
+      "status": "FINALIZED",
+      "execution": "FINISHED_WITH_RETURN",
+      "expectedOutcome": "Batch registered with initial custodian Acc1",
+      "observedOutcome": "FINALIZED, execution=FINISHED_WITH_RETURN",
+      "passed": true
+    },
+    {
+      "step": "Register SNACK-B",
+      "txHash": "0x391613910c81ab613f6a8670bf9c325900110bc0c356b51af871ebf303a3388c",
+      "status": "FINALIZED",
+      "execution": "FINISHED_WITH_RETURN",
+      "expectedOutcome": "Batch registered with initial custodian Acc1",
+      "observedOutcome": "FINALIZED, execution=FINISHED_WITH_RETURN",
+      "passed": true
+    },
+    {
+      "step": "Register COMBO",
+      "txHash": "0x68933ff130ae5877ba3ff1f86e1a7a9073e9b572a08d899b2b825f6dbc1bdfe5",
+      "status": "FINALIZED",
+      "execution": "FINISHED_WITH_RETURN",
+      "expectedOutcome": "Batch registered with initial custodian Acc1",
+      "observedOutcome": "FINALIZED, execution=FINISHED_WITH_RETURN",
+      "passed": true
+    },
+    {
+      "step": "Transfer FLOUR-B (Unaffected)",
+      "txHash": "0x638e8c9090f8c9292fc00f4fe6ec9b4583c4cffa958718b15c5dc976a990fa48",
+      "status": "FINALIZED",
+      "execution": "FINISHED_WITH_RETURN",
+      "expectedOutcome": "Custodian updated to 0xac344A9aB8808d6fcfF1f8D18F794C3b24FE2634",
+      "observedOutcome": "Custodian is 0xac344A9aB8808d6fcfF1f8D18F794C3b24FE2634",
+      "passed": true
+    },
+    {
+      "step": "Issue Pune Recall Notice",
+      "txHash": "0x268e35ee46bf8310d00bd25d0c05ded8a8f41432792fc427847cfee41ecbc8cc",
+      "status": "FINALIZED",
+      "execution": "FINISHED_WITH_RETURN",
+      "expectedOutcome": "FLOUR-A, SNACK-A, and COMBO quarantined; FLOUR-B and SNACK-B clear",
+      "observedOutcome": "Quarantined: [\"COMBO\",\"FLOUR-A\",\"SNACK-A\"]",
+      "passed": true
+    },
+    {
+      "step": "Blocked Custody Transfer on COMBO",
+      "txHash": "0x2eb8db92af6d9174604560235f13f735f898c0ee2e39916c0dfb95bfcbe9f24c",
+      "status": "FINALIZED",
+      "execution": "FINISHED_WITH_ERROR",
+      "expectedOutcome": "Transaction execution fails and custodian remains Acc1",
+      "observedOutcome": "Execution: FINISHED_WITH_ERROR, Custodian: 0x74e8338F52617cBF3e4A2Aaa92ddA6665Ec4991F",
+      "passed": true
+    },
+    {
+      "step": "Issue Mumbai Recall Notice",
+      "txHash": "0xecc218d0ed1a4a4ce67ca0a06770028ff7124d961064a9816c5cd755272520b3",
+      "status": "FINALIZED",
+      "execution": "FINISHED_WITH_RETURN",
+      "expectedOutcome": "All 5 batches quarantined under dual active notices",
+      "observedOutcome": "Quarantined count: 5 ([\"COMBO\",\"FLOUR-A\",\"FLOUR-B\",\"SNACK-A\",\"SNACK-B\"])",
+      "passed": true
+    },
+    {
+      "step": "Retract Pune Notice (Persistent COMBO Quarantine)",
+      "txHash": "0x95e9c9eeff3ee4a3894fab37486915823cef061b0e229b6cb30df950f71cd627",
+      "status": "FINALIZED",
+      "execution": "FINISHED_WITH_RETURN",
+      "expectedOutcome": "FLOUR-A/SNACK-A cleared; COMBO remains quarantined by Mumbai notice",
+      "observedOutcome": "Quarantined: [\"COMBO\",\"FLOUR-B\",\"SNACK-B\"]",
+      "passed": true
+    },
+    {
+      "step": "Blocked Custody Transfer on COMBO (Covered by Mumbai Notice)",
+      "txHash": "0xaf6120f3177ab5a5ef7a8122eb24e1f2d74a716240532a2cb499002b21ef7439",
+      "status": "FINALIZED",
+      "execution": "FINISHED_WITH_ERROR",
+      "expectedOutcome": "Transfer blocked while covered by active Mumbai notice; custodian remains Acc1",
+      "observedOutcome": "Execution: FINISHED_WITH_ERROR, Custodian remains 0x74e8338F52617cBF3e4A2Aaa92ddA6665Ec4991F",
+      "passed": true
+    },
+    {
+      "step": "Retract Mumbai Notice (Full Clearance)",
+      "txHash": "0xb3398345ec7e1bbb9e1c8413467b1cb665bb2781a522df73739d5692cab32a6f",
+      "status": "FINALIZED",
+      "execution": "FINISHED_WITH_RETURN",
+      "expectedOutcome": "All batches clear of quarantine (quarantine count = 0)",
+      "observedOutcome": "Quarantined count: 0",
+      "passed": true
+    },
+    {
+      "step": "Transfer COMBO (Post-Clearance)",
+      "txHash": "0xe4bb1df2c4233bee080a963287fb4b86d9363fb17e3c74328b2d66af4b46e94c",
+      "status": "FINALIZED",
+      "execution": "FINISHED_WITH_RETURN",
+      "expectedOutcome": "COMBO custodian successfully updated to 0xac344A9aB8808d6fcfF1f8D18F794C3b24FE2634",
+      "observedOutcome": "COMBO custodian is 0xac344A9aB8808d6fcfF1f8D18F794C3b24FE2634",
+      "passed": true
+    }
+  ]
+}

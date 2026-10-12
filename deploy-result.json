@@ -1,0 +1,35 @@
+{
+  "rpc": "https://studio-next.genlayer.com/api",
+  "chainId": 61997,
+  "contractAddress": "0xa153CB64dfb448b13306874FcAed385A20ec20C5",
+  "deployHash": "0xb72434885b079be8739dcbc19ca1dc2c385bba885e130fc87391643317a8e29d",
+  "producer": "0x74e8338F52617cBF3e4A2Aaa92ddA6665Ec4991F",
+  "recallAuthority": "0xac344A9aB8808d6fcfF1f8D18F794C3b24FE2634",
+  "deployer": "0x74e8338F52617cBF3e4A2Aaa92ddA6665Ec4991F",
+  "statusName": "FINALIZED",
+  "execution": "FINISHED_WITH_RETURN",
+  "localRawSha256": "66f24b81aca07d32028898931c45b919fe3034129a8aac6bf0467e289dcd6f89",
+  "deployedSha256": "66f24b81aca07d32028898931c45b919fe3034129a8aac6bf0467e289dcd6f89",
+  "exactByteMatch": true,
+  "normalizedMatch": true,
+  "sdkTransformationNote": "None (Byte-for-byte exact match)",
+  "fees": {
+    "feeValue": "100000000000010352",
+    "distribution": {
+      "leaderTimeunitsAllocation": "100",
+      "validatorTimeunitsAllocation": "200",
+      "appealRounds": "0",
+      "executionBudgetPerRound": "25000000000000000",
+      "executionConsumed": "0",
+      "totalMessageFees": "0",
+      "rotations": [
+        "3"
+      ],
+      "maxPriceGenPerTimeUnit": "2",
+      "storageFeeMaxGasPrice": "300000000",
+      "receiptFeeMaxGasPrice": "300000000"
+    }
+  },
+  "explorer": "https://explorer-studio-dev.genlayer.com/address/0xa153CB64dfb448b13306874FcAed385A20ec20C5",
+  "deployedAt": "2026-10-12T06:28:19.688Z"
+}

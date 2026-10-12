@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Secrets & Environment
+.env
+*.pem
+*.key
+
+# Python & Testing caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Bulky runtime artifacts
+artifacts/

@@ -1,0 +1,1 @@
+"""LotGuard direct test package."""
